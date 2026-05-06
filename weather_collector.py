@@ -1,13 +1,18 @@
 import requests
 import time
+import os
 from datetime import datetime
 from pymongo import MongoClient
-from config import API_KEY
+
+# ==============================
+# 🔹 Environment Variables
+# ==============================
+API_KEY = os.getenv("API_KEY")
+MONGO_URI = os.getenv("MONGO_URI")
 
 # ==============================
 # 🔹 MongoDB Configuration
 # ==============================
-MONGO_URI = "mongodb+srv://sanjanascs22_db_user:qmsgkJv8Ao3RmpI7@cluster0.wmxt8s8.mongodb.net/?appName=Cluster0"
 DB_NAME = "weatherDB"
 COLLECTION_NAME = "weather_data"
 
@@ -26,10 +31,11 @@ CITY = "Mangalore"
 def fetch_weather():
     try:
         url = f"http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric"
+
         response = requests.get(url)
         data = response.json()
 
-        # Safety check (important)
+        # Safety check
         if response.status_code != 200:
             print("❌ API Error:", data)
             return None
