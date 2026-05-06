@@ -1,5 +1,4 @@
 import requests
-import time
 import os
 from datetime import datetime
 from pymongo import MongoClient
@@ -72,11 +71,8 @@ def store_data():
 
 
 # ==============================
-# 🔹 Main Loop (Runs Forever)
+# 🔹 Main
 # ==============================
 if __name__ == "__main__":
     print("🚀 Weather data collection started...")
-
-    while True:
-        store_data()
-        time.sleep(300)  # every 5 minutes
+    store_data()
