@@ -1,0 +1,24 @@
+body {
+    font-family: Arial;
+    background: #ffffff;
+    color: #000000;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px;
+    color: #0ea5e9;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 15px;
+}

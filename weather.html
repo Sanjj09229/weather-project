@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Correct CSS path -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>🌦 Weather Dashboard</h1>
+
+<button onclick="loadData()">Load Data</button>
+<button onclick="goHome()">⬅ Back</button>
+
+<!-- Changed grid → container and box → card -->
+<div class="container">
+    <div class="card"><canvas id="temp"></canvas></div>
+    <div class="card"><canvas id="humidity"></canvas></div>
+    <div class="card"><canvas id="pressure"></canvas></div>
+    <div class="card"><canvas id="wind"></canvas></div>
+    <div class="card"><canvas id="rain"></canvas></div>
+</div>
+
+<!-- Correct JS path -->
+<script src="{{ url_for('static', filename='weather.js') }}"></script>
+
+</body>
+</html>
